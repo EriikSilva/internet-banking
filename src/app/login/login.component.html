@@ -1,0 +1,44 @@
+<p-toast position="top-right" key="login"></p-toast>
+
+<div
+  class="flex justify-content-center align-items-stretch"
+  [style]="{ 'margin-top': '10em' }"
+>
+  <p-card
+    header="LOGIN"
+
+  
+    [style]="{ width: '25rem', 'margin-bottom': '2em', 'margin-right': 'auto','margin-left': 'auto' }"
+  >
+    <ng-template pTemplate="header"></ng-template>
+    <div [formGroup]="userForm">
+      <input
+        [style]="{ width: '100%' }"
+        type="text"
+        pInputText
+        placeholder="Email"
+        formControlName="email"
+      />
+      <p-divider></p-divider>
+      <input
+        [style]="{ width: '100%' }"
+        type="password"
+        pInputText
+        placeholder="Senha"
+        formControlName="senha"
+      />
+      <p-divider></p-divider>
+      <button 
+      (click)="submitForm()"
+      [style]="{ 'margin-left': '38%' }"
+       pButton>Login</button>
+       <br>
+       <p-divider></p-divider>
+       <button 
+       (click)="criarConta()"
+       [style]="{ 'margin-left': '33%' }"
+       routerLink="/criar-conta"
+        pButton>Criar Conta</button>
+    </div>
+  </p-card>
+</div>
