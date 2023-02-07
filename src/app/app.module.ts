@@ -26,6 +26,14 @@ import { AuthInterceptorProvider } from './auth/auth.interceptor';
 import { SignInComponent } from './sign-in/sign-in.component';
 import {TableModule} from 'primeng/table';
 import {DialogModule} from 'primeng/dialog';
+import { HistoricoTransferenciaComponent } from './historico-transferencia/historico-transferencia.component';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { HistoricoRecebidoComponent } from './historico-recebido/historico-recebido.component';
+
+registerLocaleData(localePt);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +41,9 @@ import {DialogModule} from 'primeng/dialog';
     LoginComponent,
     DashboardComponent,
     ToolbarComponent,
-    SignInComponent
+    SignInComponent,
+    HistoricoTransferenciaComponent,
+    HistoricoRecebidoComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +64,8 @@ import {DialogModule} from 'primeng/dialog';
     TableModule,
     DialogModule
   ],
-  providers: [AuthInterceptorProvider,MessageService],
+  providers: [AuthInterceptorProvider,MessageService,
+    { provide: LOCALE_ID, useValue: 'pt-BR' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

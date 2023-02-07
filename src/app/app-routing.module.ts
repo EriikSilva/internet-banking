@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IsAuthenticatedGuard } from './guard/is-authenticated.guard';
 import { IsLoggeddGuard } from './guard/is-logged-in';
+import { HistoricoRecebidoComponent } from './historico-recebido/historico-recebido.component';
+import { HistoricoTransferenciaComponent } from './historico-transferencia/historico-transferencia.component';
 import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { TesteComponent } from './teste/teste.component';
@@ -26,7 +28,14 @@ const routes: Routes = [
     path:'teste',
     component:TesteComponent
   },
-  
+  {
+    path:'historico-transferencias',
+    component:HistoricoTransferenciaComponent
+  },
+  {
+    path:'recebidos',
+    component:HistoricoRecebidoComponent
+  },
   { path: '**', redirectTo: '' }
   
 ];

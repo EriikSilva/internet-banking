@@ -44,9 +44,7 @@ export class DashboardComponent implements OnInit {
 
   transferenciaForm = new FormGroup({
     numero_conta_recebedor: new FormControl('', Validators.required),
-    // numero_conta_pagador: new FormControl('', Validators.required),
     valor: new FormControl('', Validators.required)
-    
   })
 
 
@@ -54,7 +52,7 @@ export class DashboardComponent implements OnInit {
     this.criarFuncionariosDialog = false
   }
 
-  inserirFuncionario(){
+  fazerTransferencia(){
 
     this.formularioDinamico = this.transferenciaForm.value
     this.formularioDinamico.numero_conta_pagador = this.numero_conta
