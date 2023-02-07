@@ -61,27 +61,27 @@ router.post("/", (req, res, next) => {
     //CADASTRANDO
     conn.query(
       `
-      INSERT INTO 
-      transferencias 
-      (id_usuario_pagador,id_usuario_recebedor, valor) VALUES (?,?,?);
-  
+      INSERT INTO transferencias(numero_conta_pagador, numero_conta_recebedor, valor) VALUES
+      (?, ?, ?);
+
       UPDATE 
       usuarios as uPagador
-      INNER JOIN transferencias
-      ON uPagador.id_usuario = transferencias.id_usuario_pagador
-      INNER JOIN usuarios as uRecebedor
-      ON uRecebedor.id_usuario = transferencias.id_usuario_recebedor
-      SET uPagador.saldo = uPagador.saldo - transferencias.valor,
+          INNER JOIN transferencias
+      ON uPagador.numero_conta = transferencias.numero_conta_pagador
+         INNER JOIN usuarios as uRecebedor
+      ON uRecebedor.numero_conta = transferencias.numero_conta_recebedor
+         SET uPagador.saldo = uPagador.saldo - transferencias.valor,
       uRecebedor.saldo = uRecebedor.saldo + transferencias.valor
-      WHERE 
-      transferencias.id_transferencia = (SELECT id_transferencia FROM transferencias WHERE transferencias.id_usuario_pagador = ? 
-      ORDER BY id_transferencia DESC LIMIT 1)
+        WHERE 
+      transferencias.id_transferencia = 
+      (SELECT id_transferencia FROM transferencias WHERE transferencias.numero_conta_pagador = ?
+      ORDER BY id_transferencia DESC LIMIT 1) 
       `,
       [
-        req.body.id_usuario_pagador,
-        req.body.id_usuario_recebedor,
+        req.body.numero_conta_pagador,
+        req.body.numero_conta_recebedor,
         req.body.valor,
-        req.body.id_usuario_pagador
+        req.body.numero_conta_pagador,
       ],
       (error, result) => {
         conn.release();
@@ -92,8 +92,8 @@ router.post("/", (req, res, next) => {
         response = {
           message: "Transferencia",
           trasnferencia: {
-            id_usuario_pagador:req.body.id_usuario_pagador,
-            id_usuario_recebedor:req.body.id_usuario_recebedor,
+            numero_conta_pagador:req.body.numero_conta_pagador,
+            numero_conta_recebedor:req.body.numero_conta_recebedor,
             valor: req.body.valor,
           },
         };

@@ -17,8 +17,9 @@ export class DashboardComponent implements OnInit {
   id_user: any;
   saldo: any;
   numero_conta: any;
-
+  teste:any
   cargos:any;
+  formularioDinamico:any;
   criarFuncionariosDialog: boolean;
   constructor(
     private usuariosService: UsuariosService,
@@ -42,8 +43,10 @@ export class DashboardComponent implements OnInit {
   }
 
   transferenciaForm = new FormGroup({
-    numero_recebedor: new FormControl('', Validators.required),
+    numero_conta_recebedor: new FormControl('', Validators.required),
+    // numero_conta_pagador: new FormControl('', Validators.required),
     valor: new FormControl('', Validators.required)
+    
   })
 
 
@@ -53,12 +56,16 @@ export class DashboardComponent implements OnInit {
 
   inserirFuncionario(){
 
-    console.log('transferencias', this.transferenciaForm.value)
+    this.formularioDinamico = this.transferenciaForm.value
+    this.formularioDinamico.numero_conta_pagador = this.numero_conta
 
-    this.trasnferenciaService.postTransferencias(this.transferenciaForm.value)
+    console.log('transferencias', this.formularioDinamico);
+
+    this.trasnferenciaService.postTransferencias(this.formularioDinamico)
     .subscribe((res:any) => {
       console.log(res)
       this.hideDialog();
+      window.location.reload();
     })
 
   }

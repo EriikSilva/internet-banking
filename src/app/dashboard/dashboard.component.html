@@ -25,14 +25,14 @@
 >
   <ng-template pTemplate="content" [formGroup]="transferenciaForm">
 
-    
+   
     <div class="field">
-      <label for="nome_completo">Numero da conta Completo <span class="p-error">(Obrigatório)</span></label>
+      <label for="nome_completo">Numero da conta<span class="p-error">(Obrigatório)</span></label>
       <input
         type="number"
-        formControlName="numero_recebedor"
+        formControlName="numero_conta_recebedor"
         pInputText
-        id="numero_recebedor"
+        id="numero_conta_recebedor"
         required
         minlength="6"
         maxlength="6"
