@@ -8,34 +8,6 @@
 -- )
 
 
--- create table conta_usuario(
--- 	   criado_em datetime not null default current_timestamp(),
---     conta_id int(11) not null,
---     usuario_id int(11) not null,
---     constraint fk_conta_id FOREIGN KEY (conta_id) REFERENCES conta(id_conta) ON DELETE CASCADE,
---     constraint fk_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
--- )
-
--- create table transferencias(
--- 	id_tranferencia int not null AUTO_INCREMENT,
---     quantidade bigint not null,
---     numero_conta int not null,
---     data_transferencia datetime not null DEFAULT CURRENT_TIMESTAMP(), 
---     constraint fk_numero_conta FOREIGN key quantidade REFERENCES conta(numero)
--- )
-
-
--- create table transferencias(
--- 	id int not null primary key AUTO_INCREMENT,
---     criado_em datetime not null default CURRENT_TIMESTAMP(),
---     nome_pagador varchar(100),
---     numero_pagador int not null,
---     nome_recebedor varchar(100),
---     numero_recebedor int not null,
---     valor bigint not null
--- )
-
-
 -- create table transferencias(
 -- 	id_transferencia int not null primary key AUTO_INCREMENT,
 --     criado_em datetime not null default current_timestamp(),
@@ -82,3 +54,19 @@
 -- set uPagador.saldo = uPagador.saldo - transferencias.valor,
 -- uRecebedor.saldo = uRecebedor.saldo + transferencias.valor
 -- where transferencias.id_transferencia = (SELECT id_transferencia FROM transferencias WHERE transferencias.id_usuario_pagador = 4 ORDER BY id_transferencia DESC LIMIT 1)
+
+
+-- insert into transferencias(numero_conta_pagador, numero_conta_recebedor, valor) VALUES
+-- 						  (342152,627144, 100);
+                          
+-- UPDATE 
+--       usuarios as uPagador
+--       INNER JOIN transferencias
+--       ON uPagador.numero_conta = transferencias.numero_conta_pagador
+--       INNER JOIN usuarios as uRecebedor
+--       ON uRecebedor.numero_conta = transferencias.numero_conta_recebedor
+--       SET uPagador.saldo = uPagador.saldo - transferencias.valor,
+--       uRecebedor.saldo = uRecebedor.saldo + transferencias.valor
+--       WHERE 
+--       transferencias.id_transferencia = (SELECT id_transferencia FROM transferencias WHERE transferencias.numero_conta_pagador = 342152
+--       ORDER BY id_transferencia DESC LIMIT 1) 
