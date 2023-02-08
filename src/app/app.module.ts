@@ -30,7 +30,7 @@ import { HistoricoTransferenciaComponent } from './historico-transferencia/histo
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { HistoricoRecebidoComponent } from './historico-recebido/historico-recebido.component';
+
 
 registerLocaleData(localePt);
 
@@ -43,7 +43,6 @@ registerLocaleData(localePt);
     ToolbarComponent,
     SignInComponent,
     HistoricoTransferenciaComponent,
-    HistoricoRecebidoComponent,
   ],
   imports: [
     BrowserModule,

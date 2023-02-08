@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
       this.saldo = res.usuario.saldo;
       this.numero_conta = res.usuario.numero_conta;
       this.nome = res.usuario.nome;
-      console.log('dashboard', res);
+      // console.log('dashboard', res);
     });
   }
 

@@ -10,6 +10,7 @@ export class HistoricoTransferenciaComponent implements OnInit {
 
   transferencias:any
   numero_conta:any
+  teste:any
 
   constructor(private transferenciaService:TransferenciasService){}
 
@@ -18,10 +19,12 @@ export class HistoricoTransferenciaComponent implements OnInit {
 
     this.numero_conta = localStorage['numero_conta'];
 
-    this.transferenciaService.getTrasferenciasPagos(this.numero_conta)
+    this.transferenciaService.getTrasferencias(this.numero_conta)
     .subscribe((res:any) => {
       this.transferencias = res.transferencias
-      console.log(res)
+      
+    
+      console.log(this.transferencias)
     })
 
   }

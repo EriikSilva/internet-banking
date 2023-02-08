@@ -8,9 +8,7 @@ export class TransferenciasService {
 
   apiUrl = "http://localhost:3333/transferencias/"
 
-  recebidos = "http://localhost:3333/transferencias/recebidos/"
-
-  pagos = "http://localhost:3333/transferencias/pagos/"
+  transferencias = "http://localhost:3333/transferencias/transferencias/"
 
   constructor(private http:HttpClient) { }
 
@@ -18,14 +16,9 @@ export class TransferenciasService {
     return this.http.post(this.apiUrl, data)
   }
 
-  getTrasferenciasRecebidos(numero_conta:any){
+  getTrasferencias(numero_conta:any){
     let numero_conta_atual = numero_conta
-    return this.http.get(this.recebidos + numero_conta_atual);
-  }
-
-  getTrasferenciasPagos(numero_conta:any){
-    let numero_conta_atual = numero_conta
-    return this.http.get(this.pagos + numero_conta_atual);
+    return this.http.get(this.transferencias + numero_conta_atual);
   }
 
 }
