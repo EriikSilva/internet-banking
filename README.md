@@ -21,6 +21,7 @@
   - Verifica se email existe caso tente cadastrar um email que ja existe
   - Verifica se conta existe caso tente enviar para uma conta que não existe
   - Verifica se conta não esta zerada caso tente enviar dinheiro
+  - Ao criar uma conta o proprio banco de dados(SQL) te concedera um numero de conta que o usuario saberá ao logar
  
 # 💬 Sobre
 Projeto sobra um banco com features cadastro de conta, transferir para contas existentes e consultar saldo
