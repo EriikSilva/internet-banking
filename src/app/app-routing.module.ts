@@ -22,7 +22,8 @@ const routes: Routes = [
   },
   {
     path:"criar-conta",
-    component:SignInComponent
+    component:SignInComponent,
+    canActivate:[IsLoggeddGuard]
   },
   {
     path:'teste',
