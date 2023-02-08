@@ -18,7 +18,7 @@ Projeto sobra um banco com features cadastro de conta, transferir para contas ex
 
 # 💻 Características
 - Proteção de rotas
-  - Caso não esteja logado o usuario não conseguiraracessar rotas pela url 
+  - Caso não esteja logado o usuario não conseguirar acessar rotas pela url como dashboard, historico e etc
   - Caso esteja logado o usuario não conseguirar acessa a url de login ou criar-conta
 - Login 
   - Foi usado jwt(jsonWeToken) com guard, interceptor e authorization para validação de usuario
