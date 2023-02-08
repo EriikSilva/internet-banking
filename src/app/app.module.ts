@@ -30,14 +30,11 @@ import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ToastModule} from 'primeng/toast';
-import {InputMaskModule} from 'primeng/inputmask';
-
+import {InputNumberModule} from 'primeng/inputnumber';
 
 import localePt from '@angular/common/locales/pt';
 import { CardOpcoesComponent } from './cards/card-opcoes/card-opcoes.component';
 import { CardSaldoContaComponent } from './cards/card-saldo-conta/card-saldo-conta.component';
-
-
 
 registerLocaleData(localePt);
 
@@ -72,7 +69,9 @@ registerLocaleData(localePt);
     TableModule,
     DialogModule,
     ProgressSpinnerModule,
-    InputMaskModule
+    InputNumberModule
+
+   
   ],
   providers: [AuthInterceptorProvider,MessageService,
     { provide: LOCALE_ID, useValue: 'pt-BR' } ],
