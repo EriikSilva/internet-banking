@@ -10,6 +10,11 @@
   <a href="https://github.com/EriikSilva"><img src="https://img.shields.io/github/followers/EriikSilva?style=social"></a>
 </div>
 
+# 💬 Sobre
+Projeto sobra um banco com features cadastro de conta, transferir para contas existentes e consultar saldo
+<br>
+- Front-end:angular com primeng.
+- Back-end:node com express e mysql.
 
 # 💻 Características
 - Proteção de rotas
@@ -25,13 +30,6 @@
   - Verifica se conta existe caso tente enviar para uma conta que não existe
   - Verifica se conta não esta zerada caso tente enviar dinheiro
   - Ao criar uma conta o proprio banco de dados(SQL) te concedera um numero de conta que o usuario saberá ao logar
- 
-# 💬 Sobre
-Projeto sobra um banco com features cadastro de conta, transferir para contas existentes e consultar saldo
-<br>
-- Front-end:angular com primeng.
-- Back-end:node com express e mysql.
-
 <b>Features:</b>
 <br>
 - Toolbar
