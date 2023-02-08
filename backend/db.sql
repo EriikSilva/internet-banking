@@ -1,22 +1,22 @@
--- create table usuarios(
--- 	id_usuario int not null primary key AUTO_INCREMENT,
---     nome varchar(80) not null,
---     email varchar(150) not null unique,
---     senha varchar(80) not null,
---     numero_conta int(6) not null DEFAULT (rand() * (999999 - 100000) + 100000),
---     saldo bigint default 10000
--- )
+create table usuarios(
+	id_usuario int not null primary key AUTO_INCREMENT,
+    nome varchar(80) not null,
+    email varchar(150) not null unique,
+    senha varchar(80) not null,
+    numero_conta int(6) not null DEFAULT (rand() * (999999 - 100000) + 100000) unique,
+    saldo bigint default 10000
+)
 
 
--- create table transferencias(
--- 	id_transferencia int not null primary key AUTO_INCREMENT,
---     criado_em datetime not null default current_timestamp(),
---     id_usuario_pagador int not null,
---     id_usuario_recebedor int not null,
---     valor bigint not null,
---     CONSTRAINT fk_id_usuario_pagador FOREIGN KEY (id_usuario_pagador) REFERENCES usuarios(id_usuario),
---     CONSTRAINT fk_id_usuario_recebedor FOREIGN KEY (id_usuario_recebedor) REFERENCES usuarios(id_usuario)
--- )
+create table transferencias(
+	id_transferencia int not null primary key AUTO_INCREMENT,
+    criado_em datetime not null default current_timestamp(),
+    numero_conta_pagador int not null,
+    numero_conta_recebedor int not null,
+    valor bigint not null,
+    CONSTRAINT fk_numero_conta_pagador FOREIGN KEY (numero_conta_pagador) REFERENCES usuarios(id_usuario),
+    CONSTRAINT fk_numero_conta_recebedor FOREIGN KEY (numero_conta_recebedor) REFERENCES usuarios(id_usuario)
+)
 
 
 -- select 

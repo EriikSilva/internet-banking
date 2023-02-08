@@ -38,9 +38,9 @@ router.get("/:numero_conta_pagador", (req, res, next) => {
           ELSE uRecebedor.numero_conta
           END as conta
       FROM transferencias as t
-      INNER JOIN usuarios as uRecebedor 
+        INNER JOIN usuarios as uRecebedor 
       ON t.numero_conta_recebedor = uRecebedor.numero_conta
-      INNER JOIN usuarios as uPagador
+        INNER JOIN usuarios as uPagador
       ON t.numero_conta_pagador = uPagador.numero_conta      
       WHERE t.numero_conta_recebedor = @conta 
       OR t.numero_conta_pagador = @conta 
@@ -57,12 +57,6 @@ router.get("/:numero_conta_pagador", (req, res, next) => {
             error: error,
           });
         }
-
-        // if (result.length == 0) {
-        //   return res.status(404).send({
-        //     message: "conta não encontrado ou não existe",
-        //   });
-        // }  
 
         var data = JSON.stringify(result[1])
         // console.log(data)

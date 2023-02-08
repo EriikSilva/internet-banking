@@ -24,7 +24,7 @@ export class CardPerfilComponent implements OnInit {
       this.numero_conta = res.usuario.numero_conta;
       this.nome = res.usuario.nome;
       this.email = res.usuario.email
-      console.log('perfil', res);
+      // console.log('perfil', res);
     });
   }
 

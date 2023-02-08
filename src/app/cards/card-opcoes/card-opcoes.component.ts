@@ -82,7 +82,7 @@ export class CardOpcoesComponent implements OnInit {
               key: 'error',
               severity: 'error',
               summary: 'Error ao inserir',
-              detail: 'Algo deu errado ou conta não existe',
+              detail: 'Conta não existe ou saldo insuficiente',
             });
           } 
      

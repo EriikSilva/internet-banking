@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 
 app.use('/usuarios',rotaUsuarios)
 app.use('/transferencias',rotaTransferencias)
-// app.use('/produtos', rotaProdutos);
+
 
 
 app.use((req, res, next) => {
