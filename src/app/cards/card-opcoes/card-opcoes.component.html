@@ -1,0 +1,115 @@
+<p-toast position="top-right" key="error"></p-toast>
+<p-toast position="top-right" key="transferido"></p-toast>
+
+
+<p-dialog
+  [(visible)]="dialogTransferir"
+  [style]="{ width: '500px', height: '420px' }"
+  header="Transferir"
+  [modal]="true"
+  styleClass="p-fluid"
+>
+  <ng-template pTemplate="content" [formGroup]="transferenciaForm">
+    <div class="field">
+      <label for="nome_completo"
+        >Conta<span class="p-error"> (Obrigatório) </span></label
+      >
+      <input
+        type="number"
+        formControlName="numero_conta_recebedor"
+        pInputText
+        id="numero_conta_recebedor"
+        required
+        minlength="6"
+        maxlength="6"
+        required
+      />
+    </div>
+
+    <p-divider></p-divider>
+
+    <div class="field">
+      <label for="nome_completo"
+        >Valor<span class="p-error"
+          > (Obrigatório) </span
+        ></label
+      >
+      <input
+        type="number"
+        formControlName="valor"
+        pInputText
+        id="valor"
+        required
+      />
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      pRipple
+      label="Cancelar"
+      icon="pi pi-times"
+      class="p-button-text"
+      (click)="hideDialog()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      label="Transferir"
+      icon="pi pi-money-bill"
+      class="p-button-text"
+      (click)="fazerTransferencia()"
+    ></button>
+  </ng-template>
+</p-dialog>
+
+<div class="card-container overflow-hidden">
+  <div
+    class="flex flex-1 flex align-items-center justify-content-center"
+    [style]="{
+      'margin-top': '2em'
+    }"
+  >
+    <p-card
+      (click)="dialogCriar()"
+      header="Transferir"
+      [style]="{
+        width: '23rem',
+        'margin-bottom': '2em',
+        'margin-right': '2em',
+        'margin-left': '1.9em'
+      }"
+    >
+      <ng-template pTemplate="header">
+        <img alt="Card" src="assets/transferir.png" />
+      </ng-template>
+    </p-card>
+
+    <p-card
+      header="Histórico de Transferência"
+      [style]="{
+        width: '23rem',
+        'margin-bottom': '2em',
+        'margin-left': '2.2em'
+      }"
+      routerLink="/historico-transferencias"
+    >
+      <ng-template pTemplate="header">
+        <img alt="Card" src="assets/historico.jpg" />
+      </ng-template>
+    </p-card>
+
+    <!-- <div class="flex-1 flex align-items-center justify-content-center">
+      <p-card
+        header="Estatísticas"
+        [style]="{ width: '23rem', 'margin-bottom': '2em' }"
+        routerLink="/estatistica"
+      >
+        <ng-template pTemplate="header">
+          <img alt="Card" src="assets/estatistica.jpg" />
+        </ng-template>
+      </p-card>
+    </div> -->
+  </div>
+</div>

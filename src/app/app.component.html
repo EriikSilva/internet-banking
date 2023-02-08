@@ -1,3 +1,4 @@
 <app-toolbar *ngIf="authService.isLoggedIn$ | async"></app-toolbar>
-
-<router-outlet></router-outlet>
+<div class="bg">
+    <router-outlet></router-outlet>
+</div>

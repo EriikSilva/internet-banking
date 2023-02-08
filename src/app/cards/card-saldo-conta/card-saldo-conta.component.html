@@ -1,0 +1,21 @@
+<div
+  class="flex justify-content-center align-items-stretch"
+>
+  <p-card
+    [style]="{
+      'width': '50rem',
+      'margin-bottom': '1em',
+      'margin-right': 'auto',
+      'margin-left': '2rem',
+      'margin-top': '3em'
+    }"
+  >
+    <h3>Bem Vindo(a): {{ this.nome | titlecase }}</h3>
+    <ng-template pTemplate="sub-header">
+      <h2>Conta: {{ this.numero_conta }}</h2>
+      <h1>SALDO: {{ this.saldo | currency : "BRL" }}</h1>
+    </ng-template>
+
+    <p-divider></p-divider>
+  </p-card>
+</div>

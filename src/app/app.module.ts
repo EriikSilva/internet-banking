@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { TesteComponent } from './teste/teste.component';
 import {ButtonModule} from 'primeng/button';
 import { LoginComponent } from './login/login.component';
-import {ToastModule} from 'primeng/toast';
 import {InputTextModule} from 'primeng/inputtext';
 import {AccordionModule} from 'primeng/accordion';     
 import {MenuItem, MessageService} from 'primeng/api';         
@@ -29,7 +28,15 @@ import {DialogModule} from 'primeng/dialog';
 import { HistoricoTransferenciaComponent } from './historico-transferencia/historico-transferencia.component';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {ToastModule} from 'primeng/toast';
+import {InputMaskModule} from 'primeng/inputmask';
+
+
 import localePt from '@angular/common/locales/pt';
+import { CardOpcoesComponent } from './cards/card-opcoes/card-opcoes.component';
+import { CardSaldoContaComponent } from './cards/card-saldo-conta/card-saldo-conta.component';
+
 
 
 registerLocaleData(localePt);
@@ -43,6 +50,8 @@ registerLocaleData(localePt);
     ToolbarComponent,
     SignInComponent,
     HistoricoTransferenciaComponent,
+    CardOpcoesComponent,
+    CardSaldoContaComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +59,8 @@ registerLocaleData(localePt);
     ButtonModule,
     HttpClientModule,
     AccordionModule,
-    FormsModule,
     ToastModule,
+    FormsModule,
     DividerModule,
     CardModule,
     ToolbarModule,
@@ -61,7 +70,9 @@ registerLocaleData(localePt);
     ReactiveFormsModule,
     BrowserAnimationsModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    ProgressSpinnerModule,
+    InputMaskModule
   ],
   providers: [AuthInterceptorProvider,MessageService,
     { provide: LOCALE_ID, useValue: 'pt-BR' } ],

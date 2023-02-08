@@ -26,11 +26,13 @@ const routes: Routes = [
   },
   {
     path:'teste',
-    component:TesteComponent
+    component:TesteComponent,
+    canActivate:[IsAuthenticatedGuard],
   },
   {
     path:'historico-transferencias',
-    component:HistoricoTransferenciaComponent
+    component:HistoricoTransferenciaComponent,
+    canActivate:[IsAuthenticatedGuard],
   },
   { path: '**', redirectTo: '' }
   

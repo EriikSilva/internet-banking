@@ -6,14 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class TransferenciasService {
 
-  apiUrl = "http://localhost:3333/transferencias/"
-
-  transferencias = "http://localhost:3333/transferencias/transferencias/"
+  transferencias = "http://localhost:3333/transferencias/"
 
   constructor(private http:HttpClient) { }
 
   postTransferencias(data:any){
-    return this.http.post(this.apiUrl, data)
+    return this.http.post(this.transferencias, data)
   }
 
   getTrasferencias(numero_conta:any){

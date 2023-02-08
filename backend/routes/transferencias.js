@@ -3,12 +3,12 @@ const router = express.Router();
 const mysql = require("../mysql").pool;
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { emit } = require("nodemon");
+// const { emit } = require("nodemon");
 const { response } = require("express");
 require("dotenv").config();
 
 
-router.get("/transferencias/:numero_conta_pagador", (req, res, next) => {
+router.get("/:numero_conta_pagador", (req, res, next) => {
   //   let id = req.params.id_produto;
   // var conta = req.params.numero_conta_pagador
 
@@ -20,23 +20,21 @@ router.get("/transferencias/:numero_conta_pagador", (req, res, next) => {
     }
 
     var temporaria = 'SET @conta = ?'
-    // ${temporaria};
     conn.query(
       `
-   
       ${temporaria};
       SELECT 
       criado_em,
        CASE
-          WHEN t.numero_conta_recebedor =   @conta   THEN t.valor
+          WHEN t.numero_conta_recebedor = @conta THEN t.valor
           ELSE t.valor * (-1)
           END as valor,
       	CASE
-          WHEN t.numero_conta_recebedor =   @conta  THEN uPagador.nome
+          WHEN t.numero_conta_recebedor = @conta THEN uPagador.nome
           ELSE uRecebedor.nome
           END as nome,
         CASE
-          WHEN t.numero_conta_recebedor =  @conta  THEN uPagador.numero_conta
+          WHEN t.numero_conta_recebedor = @conta THEN uPagador.numero_conta
           ELSE uRecebedor.numero_conta
           END as conta
       FROM transferencias as t
@@ -44,8 +42,8 @@ router.get("/transferencias/:numero_conta_pagador", (req, res, next) => {
       ON t.numero_conta_recebedor = uRecebedor.numero_conta
       INNER JOIN usuarios as uPagador
       ON t.numero_conta_pagador = uPagador.numero_conta      
-      WHERE t.numero_conta_recebedor =   @conta 
-      OR t.numero_conta_pagador =  @conta 
+      WHERE t.numero_conta_recebedor = @conta 
+      OR t.numero_conta_pagador = @conta 
       ORDER BY criado_em DESC
 
       `,
@@ -92,7 +90,6 @@ router.get("/transferencias/:numero_conta_pagador", (req, res, next) => {
         // console.log(data)
         let data2 = JSON.parse(data)
         const response = {
-          // trasnferencias:data2
           transferencias: data2.map((results) => {
             return {
               criado_em:results.criado_em, 
@@ -103,8 +100,6 @@ router.get("/transferencias/:numero_conta_pagador", (req, res, next) => {
           })
 
         };
-   
-
         return res.status(200).send(response);
       }
     );
@@ -151,7 +146,7 @@ router.post("/", (req, res, next) => {
           return res.status(500).send({ error: error });
         }
 
-        response = {
+        const response = {
           message: "Transferencia",
           trasnferencia: {
             numero_conta_pagador:req.body.numero_conta_pagador,
