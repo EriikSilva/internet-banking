@@ -11,21 +11,17 @@
 >
   <ng-template pTemplate="content" [formGroup]="transferenciaForm">
     <div class="field">
-      <label for="nome_completo"
+      <label for="numero_conta_recebedor"
         >Conta<span class="p-error"> (Obrigatório) </span></label
       >
-      <input
-        type="number"
-        formControlName="numero_conta_recebedor"
-        pInputText
-        id="numero_conta_recebedor"
-        required
-        minlength="6"
-        maxlength="6"
-        required
-      />
+      <p-inputNumber 
+      mode="decimal" 
+      [maxlength]="6"
+      formControlName="numero_conta_recebedor"
+      id="numero_conta_recebedor"
+      [useGrouping]="false"></p-inputNumber>
+    
     </div>
-
     <p-divider></p-divider>
 
     <div class="field">
@@ -34,14 +30,15 @@
           > (Obrigatório) </span
         ></label
       >
-      <input
-        type="number"
-        formControlName="valor"
-        pInputText
-        id="valor"
-        required
-      />
     </div>
+
+    <p-inputNumber
+     mode="currency"
+     currency="BRL"
+     [maxlength]="12"
+     formControlName="valor"
+     >
+    </p-inputNumber>
   </ng-template>
 
   <ng-template pTemplate="footer">
