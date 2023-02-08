@@ -35,6 +35,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import localePt from '@angular/common/locales/pt';
 import { CardOpcoesComponent } from './cards/card-opcoes/card-opcoes.component';
 import { CardSaldoContaComponent } from './cards/card-saldo-conta/card-saldo-conta.component';
+import { CardPerfilComponent } from './cards/card-perfil/card-perfil.component';
 
 registerLocaleData(localePt);
 
@@ -49,6 +50,7 @@ registerLocaleData(localePt);
     HistoricoTransferenciaComponent,
     CardOpcoesComponent,
     CardSaldoContaComponent,
+    CardPerfilComponent,
   ],
   imports: [
     BrowserModule,

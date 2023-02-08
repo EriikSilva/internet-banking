@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardPerfilComponent } from './cards/card-perfil/card-perfil.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IsAuthenticatedGuard } from './guard/is-authenticated.guard';
 import { IsLoggeddGuard } from './guard/is-logged-in';
-
 import { HistoricoTransferenciaComponent } from './historico-transferencia/historico-transferencia.component';
 import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -32,6 +32,11 @@ const routes: Routes = [
   {
     path:'historico-transferencias',
     component:HistoricoTransferenciaComponent,
+    canActivate:[IsAuthenticatedGuard],
+  },
+  {
+    path:'perfil',
+    component:CardPerfilComponent,
     canActivate:[IsAuthenticatedGuard],
   },
   { path: '**', redirectTo: '' }

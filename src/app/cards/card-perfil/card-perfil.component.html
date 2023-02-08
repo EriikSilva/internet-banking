@@ -1,0 +1,27 @@
+<div
+  class="flex justify-content-center align-items-stretch"
+  [style]="{ height: '90vh' }"
+>
+  <p-card
+  styleClass="p-card-shadow"
+   
+    [style]="{
+      width: '50rem',
+      'margin-bottom': '1em',
+      'margin-right': 'auto',
+      'margin-left': '2rem',
+      'margin-top': '3em'
+    }"
+  >
+
+    <h1 class="flex justify-content-center align-items-stretch">Perfil</h1>
+    
+    <p-divider></p-divider>
+    <h3>Nome: {{ this.nome | titlecase }}</h3>
+    <ng-template pTemplate="sub-header">
+      <h3>Email: {{ this.email }}</h3>
+    </ng-template>
+
+    <p-divider></p-divider>
+  </p-card>
+</div>

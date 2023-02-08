@@ -22,7 +22,7 @@ export class CardOpcoesComponent implements OnInit {
   cargos: any;
 
   constructor(
-    private trasnferenciaService: TransferenciasService,
+    private transferenciaService: TransferenciasService,
     private usuariosService: UsuariosService,
     private messageService: MessageService
   ) {}
@@ -65,19 +65,28 @@ export class CardOpcoesComponent implements OnInit {
       return;
     }
 
-    this.trasnferenciaService
+    this.transferenciaService
       .postTransferencias(this.formularioDinamico)
-      .subscribe((res: any) => {
-        console.log(res);
-        this.hideDialog();
-        window.location.reload();
-        this.messageService.add({
-          key: 'transferido',
-          severity: 'success',
-          summary: 'Sucesso',
-          detail: 'Dinheiro Transferido com Sucesso',
-        });
-      });
+      .subscribe({
+        next: () => {  this.hideDialog();
+          window.location.reload();
+          this.messageService.add({
+            key: 'transferido',
+            severity: 'success',
+            summary: 'Sucesso',
+            detail: 'Dinheiro Transferido com Sucesso',
+          })
+          },
+          error: () =>{
+            this.messageService.add({
+              key: 'error',
+              severity: 'error',
+              summary: 'Error ao inserir',
+              detail: 'Algo deu errado ou conta não existe',
+            });
+          } 
+     
+      })
   }
 
   dialogCriar() {

@@ -50,10 +50,6 @@ router.get("/:numero_conta_pagador", (req, res, next) => {
     
       [
       req.params.numero_conta_pagador,
-      //  req.params.numero_conta_pagador,
-      //  req.params.numero_conta_pagador,
-      //  req.params.numero_conta_pagador,
-      //  req.params.numero_conta_pagador
       ],
       (error, result, field) => {
         if (error) {
@@ -64,28 +60,10 @@ router.get("/:numero_conta_pagador", (req, res, next) => {
 
         // if (result.length == 0) {
         //   return res.status(404).send({
-        //     message: "funcionario não encontrado ou não existe",
+        //     message: "conta não encontrado ou não existe",
         //   });
-        // }
+        // }  
 
-        // const response = {
-        //   transferencias: result.map((results) => {
-        //     // Object.keys(result).length
-        //     return{
-        //         criado_em:results.criado_em,    
-        //         valor:results.valor,
-        //         nome:results.nome,      
-        //         conta:results.conta,                
-        //         // resultado:results
-        //         // teste:results.resultado.criado_em
-        //         // request: {
-        //         //   tipo: "GET",
-        //         //   url: "http://localhost:3000/transferencias/",
-        //         // },
-        //     }
-            
-        //   })
-        // };    
         var data = JSON.stringify(result[1])
         // console.log(data)
         let data2 = JSON.parse(data)
@@ -107,7 +85,7 @@ router.get("/:numero_conta_pagador", (req, res, next) => {
 });
 
 
-// //CADASTRO DE TRANSFERENCIAS
+// TRANSFERENCIAS
 router.post("/", (req, res, next) => {
   mysql.getConnection((error, conn) => {
     if (error) {
@@ -145,6 +123,13 @@ router.post("/", (req, res, next) => {
         if (error) {
           return res.status(500).send({ error: error });
         }
+
+        //caso ele n ache a conta
+        if (result[1].changedRows == 0) {
+          return res.status(404).send({
+            message: "conta não encontrado ou não existe",
+          });
+        }  
 
         const response = {
           message: "Transferencia",
