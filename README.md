@@ -15,6 +15,9 @@
 - Proteção de rotas
   - Caso não esteja logado o usuario não conseguiraracessar rotas pela url 
   - Caso esteja logado o usuario não conseguirar acessa a url de login ou criar-conta
+- Login 
+  - Foi usado jwt(jsonWeToken) com guard, interceptor e authorization para validação de usuario
+  - Caso esteja logado ao fechar a pagina principal e voltar para a mesma a conta ainda vai estar logada com seu dados graças a chave jwt
 - Dados validados
   - Todos os dados são validados assim que o botão de submit é clicado 
   - Verifica se campo é null ou vazio
