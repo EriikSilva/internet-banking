@@ -14,25 +14,32 @@
     }"
   >
 
-    <h1 class="flex justify-content-center align-items-stretch">Perfil</h1>
+   
+  <h1 
+
+    style="display: inline;"
+    class="flex justify-content-center align-items-stretch">
+    <button
+    pButton
+    [style]="{'margin-right': '3px'}"
+    disabled="true"
+    icon="pi pi-user"
+    ></button>Perfil</h1>
     
     <p-divider></p-divider>
+  
     <h3>Nome:
-      <p-progressBar  
-      *ngIf="isLoading"
-      mode="indeterminate" 
-      [style]="{
-        'height': '6px'
-      }"
-      ></p-progressBar>
+       <p-skeleton 
+       *ngIf="isLoading" 
+        width="80%"
+        ></p-skeleton>
       {{ this.nome | titlecase }}</h3>
     <ng-template pTemplate="sub-header">
       <h3>Email:
-        <p-progressBar  
-        *ngIf="isLoading"
-        mode="indeterminate" 
-        [style]="{'height': '6px'}"
-        ></p-progressBar>
+        <p-skeleton 
+        *ngIf="isLoading" 
+        width="80%"
+        ></p-skeleton>
         {{ this.email }}</h3>
     </ng-template>
 

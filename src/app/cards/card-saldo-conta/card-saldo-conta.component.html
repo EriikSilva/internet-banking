@@ -15,18 +15,17 @@
     <h3>Bem Vindo(a): {{ this.nome | titlecase }}</h3>
     <ng-template pTemplate="sub-header">
       <h2>Conta:  
-        <p-progressBar  
-        *ngIf="isLoading"
-        mode="indeterminate" 
-        [style]="{'height': '6px'}"
-        ></p-progressBar>
-        {{ this.numero_conta }}</h2>
+        {{ this.numero_conta }}</h2> 
+        <p-skeleton 
+        *ngIf="isLoading" 
+        width="80%"
+        ></p-skeleton>
+        
       <h1>SALDO:
-        <p-progressBar  
-        *ngIf="isLoading"
-        mode="indeterminate" 
-        [style]="{'height': '6px'}"
-        ></p-progressBar>
+        <p-skeleton 
+        *ngIf="isLoading" 
+        width="80%"
+        ></p-skeleton>
         {{ this.saldo | currency : "BRL" }}</h1>
     </ng-template>
 
