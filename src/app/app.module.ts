@@ -31,11 +31,13 @@ import { registerLocaleData } from '@angular/common';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ToastModule} from 'primeng/toast';
 import {InputNumberModule} from 'primeng/inputnumber';
+import {ProgressBarModule} from 'primeng/progressbar';
 
 import localePt from '@angular/common/locales/pt';
 import { CardOpcoesComponent } from './cards/card-opcoes/card-opcoes.component';
 import { CardSaldoContaComponent } from './cards/card-saldo-conta/card-saldo-conta.component';
 import { CardPerfilComponent } from './cards/card-perfil/card-perfil.component';
+;
 
 registerLocaleData(localePt);
 
@@ -71,9 +73,8 @@ registerLocaleData(localePt);
     TableModule,
     DialogModule,
     ProgressSpinnerModule,
-    InputNumberModule
-
-   
+    InputNumberModule,
+    ProgressBarModule   
   ],
   providers: [AuthInterceptorProvider,MessageService,
     { provide: LOCALE_ID, useValue: 'pt-BR' } ],

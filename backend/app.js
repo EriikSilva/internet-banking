@@ -4,8 +4,6 @@ const morgan = require('morgan')
 const bodyparser = require('body-parser');
 const cors = require('cors')
 
-
-
 //routes
 const rotaUsuarios = require('./routes/usuarios')
 const rotaTransferencias = require('./routes/transferencias')

@@ -13,15 +13,17 @@ export class CardSaldoContaComponent implements OnInit {
   numero_conta: any;
   teste:any
   cargos:any;
+  isLoading:boolean = false;
 
   constructor( private usuariosService: UsuariosService){}
 
   ngOnInit(): void {
       // this.nome = localStorage['nome']
-
+      this.isLoading = true
       this.id_user = localStorage['id'];
     
       this.usuariosService.getUsuario(this.id_user).subscribe((res: any) => {
+        this.isLoading = false
         this.saldo = res.usuario.saldo;
         this.numero_conta = res.usuario.numero_conta;
         this.nome = res.usuario.nome;

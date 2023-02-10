@@ -1,12 +1,30 @@
+
+<p-progressSpinner 
+*ngIf="isLoading"
+[style]="{
+  width: '300px', 
+  height: '300px',
+  'margin-left': '40%',
+  'margin-bottom': '50vh',
+  'margin-top': '5rem'
+  }" 
+styleClass="custom-spinner" 
+strokeWidth="8" 
+fill="var(--surface-ground)" 
+animationDuration=".5s"
+></p-progressSpinner>
+
+
 <p-table 
+*ngIf="!isLoading"
 [value]="transferencias" 
 [tableStyle]="{ 
     'min-width': '50rem',
     'width': '90%', 
-    'margin-top': '1rem', 
+    'margin-top': '3rem', 
     'margin-left': 'auto', 
     'margin-right': 'auto',
-    'margin-bottom': '80vh'
+    'margin-bottom': '60vh'
   }">
   <ng-template pTemplate="header">
     <tr>
@@ -23,8 +41,8 @@
       <td>{{ transferencia.nome | titlecase }}</td>
       <td>{{ transferencia.conta }}</td>
     </tr>
-  </ng-template>
-  
+  </ng-template> 
 </p-table>
+
 <!-- <app-historico-recebido></app-historico-recebido> -->
 

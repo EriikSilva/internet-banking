@@ -1,6 +1,8 @@
 <div
   class="flex justify-content-center align-items-stretch"
 >
+
+
   <p-card
     [style]="{
       'width': '50rem',
@@ -12,8 +14,20 @@
   >
     <h3>Bem Vindo(a): {{ this.nome | titlecase }}</h3>
     <ng-template pTemplate="sub-header">
-      <h2>Conta: {{ this.numero_conta }}</h2>
-      <h1>SALDO: {{ this.saldo | currency : "BRL" }}</h1>
+      <h2>Conta:  
+        <p-progressBar  
+        *ngIf="isLoading"
+        mode="indeterminate" 
+        [style]="{'height': '6px'}"
+        ></p-progressBar>
+        {{ this.numero_conta }}</h2>
+      <h1>SALDO:
+        <p-progressBar  
+        *ngIf="isLoading"
+        mode="indeterminate" 
+        [style]="{'height': '6px'}"
+        ></p-progressBar>
+        {{ this.saldo | currency : "BRL" }}</h1>
     </ng-template>
 
     <p-divider></p-divider>

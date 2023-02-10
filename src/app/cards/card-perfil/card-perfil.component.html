@@ -17,9 +17,23 @@
     <h1 class="flex justify-content-center align-items-stretch">Perfil</h1>
     
     <p-divider></p-divider>
-    <h3>Nome: {{ this.nome | titlecase }}</h3>
+    <h3>Nome:
+      <p-progressBar  
+      *ngIf="isLoading"
+      mode="indeterminate" 
+      [style]="{
+        'height': '6px'
+      }"
+      ></p-progressBar>
+      {{ this.nome | titlecase }}</h3>
     <ng-template pTemplate="sub-header">
-      <h3>Email: {{ this.email }}</h3>
+      <h3>Email:
+        <p-progressBar  
+        *ngIf="isLoading"
+        mode="indeterminate" 
+        [style]="{'height': '6px'}"
+        ></p-progressBar>
+        {{ this.email }}</h3>
     </ng-template>
 
     <p-divider></p-divider>

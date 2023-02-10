@@ -11,16 +11,19 @@ export class HistoricoTransferenciaComponent implements OnInit {
   transferencias:any
   numero_conta:any
   teste:any
+  isLoading:boolean = false
 
   constructor(private transferenciaService:TransferenciasService){}
 
 
   ngOnInit(): void {
-
+    this.isLoading = true
     this.numero_conta = localStorage['numero_conta'];
 
     this.transferenciaService.getTrasferencias(this.numero_conta)
     .subscribe((res:any) => {
+      this.isLoading = false
+
       this.transferencias = res.transferencias
       
     

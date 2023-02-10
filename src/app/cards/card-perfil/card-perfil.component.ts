@@ -13,14 +13,15 @@ export class CardPerfilComponent implements OnInit {
   teste:any
   cargos:any;
   email:any;
-
+  isLoading:boolean = false
   constructor(private usuariosService: UsuariosService){}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.id_user = localStorage['id'];
-    
+
     this.usuariosService.getUsuario(this.id_user).subscribe((res: any) => {
- 
+      this.isLoading = false;
       this.numero_conta = res.usuario.numero_conta;
       this.nome = res.usuario.nome;
       this.email = res.usuario.email
