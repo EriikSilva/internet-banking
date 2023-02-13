@@ -31,13 +31,17 @@ import { registerLocaleData } from '@angular/common';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ToastModule} from 'primeng/toast';
 import {InputNumberModule} from 'primeng/inputnumber';
-// import {ProgressBarModule} from 'primeng/progressbar';
 import {SkeletonModule} from 'primeng/skeleton';
+import {SlideMenuModule} from 'primeng/slidemenu';
+import { ChartModule } from 'primeng/chart';
+
 
 import localePt from '@angular/common/locales/pt';
 import { CardOpcoesComponent } from './cards/card-opcoes/card-opcoes.component';
 import { CardSaldoContaComponent } from './cards/card-saldo-conta/card-saldo-conta.component';
 import { CardPerfilComponent } from './cards/card-perfil/card-perfil.component';
+import { GraficoReceitaComponent } from './grafico/grafico-receita/grafico-receita.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 ;
 
 registerLocaleData(localePt);
@@ -54,6 +58,8 @@ registerLocaleData(localePt);
     CardOpcoesComponent,
     CardSaldoContaComponent,
     CardPerfilComponent,
+    GraficoReceitaComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,10 +81,11 @@ registerLocaleData(localePt);
     DialogModule,
     ProgressSpinnerModule,
     InputNumberModule,
-    // ProgressBarModule,
-    SkeletonModule
+    SkeletonModule,
+    SlideMenuModule,
+    ChartModule
   ],
-  providers: [AuthInterceptorProvider,MessageService,
+  providers: [AuthInterceptorProvider, MessageService,
     { provide: LOCALE_ID, useValue: 'pt-BR' } ],
   bootstrap: [AppComponent]
 })
