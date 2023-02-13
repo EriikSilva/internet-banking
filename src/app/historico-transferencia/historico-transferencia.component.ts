@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import autoTable from "jspdf-autotable"
+import jsPDF from 'jspdf';
 import { TransferenciasService } from '../services/transferencias.service';
 
 @Component({
@@ -15,6 +17,7 @@ export class HistoricoTransferenciaComponent implements OnInit {
 
   constructor(private transferenciaService:TransferenciasService){}
 
+  @ViewChild('content', {static:false}) interface_pdf!:ElementRef;
 
   ngOnInit(): void {
     this.isLoading = true
@@ -27,9 +30,32 @@ export class HistoricoTransferenciaComponent implements OnInit {
       this.transferencias = res.transferencias
       
     
-      // console.log(this.transferencias)
+      console.log(this.transferencias)
     })
 
   }
+
+
+  columns = [
+    { title: "Data", dataKey: "criado_em" },
+    { title: "Valor", dataKey: "valor" },
+    { title: "Nome", dataKey: "nome" },
+    { title: "Conta", dataKey: "conta" }
+  ];
+
+  printSimplePdf() {
+ 
+    const doc = new jsPDF('p','pt');
+    
+    autoTable(doc, {
+      columns:this.columns,
+      body: this.transferencias,
+      didDrawPage: (dataArg) => { 
+       doc.text('Historico', dataArg.settings.margin.left, 10);
+      }
+ }); 
+    doc.save('historico.pdf');
+}
+
 
 } 

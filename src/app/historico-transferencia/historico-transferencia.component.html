@@ -16,7 +16,18 @@ animationDuration=".5s"
 
 <div class="bg">
 
+<button 
+pButton 
+pRipple 
+type="button" 
+icon="pi pi-file-pdf"
+
+class=" ml-5 mt-5 p-button-rounded p-button-danger"
+(click)="printSimplePdf()"
+></button>
+
 <p-table 
+#content
 *ngIf="!isLoading"
 [value]="transferencias" 
 [tableStyle]="{ 
@@ -42,7 +53,7 @@ animationDuration=".5s"
       <td>{{ transferencia.nome | titlecase }}</td>
       <td>{{ transferencia.conta }}</td>
     </tr>
-  </ng-template> 
+  </ng-template>
 </p-table>
 </div>
 <!-- <app-historico-recebido></app-historico-recebido> -->
