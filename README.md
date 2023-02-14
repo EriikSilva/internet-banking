@@ -2,11 +2,10 @@
 <h3>Ainda em desenvolvimento mas to quase acabando</h3>
 <div align="center">
   <a href="https://github.com/EriikSilva/crud-primeng-node"><img alt="hits" src="https://hits.sh/github.com/EriikSilva/crud-primeng-node.svg"></a>
-  <a href="https://github.com/EriikSilva/crud-primeng-node/graphs/commit-activity"><img src="https://img.shields.io/github/last-commit/EriikSilva/crud-primeng-node"></a>
-  <a href="https://github.com/EriikSilva/crud-primeng-node"><img src="https://img.shields.io/badge/
-  -InProgress-yellow"></a>
-  <a href="https://github.com/EriikSilva/crud-primeng-node/stargazers"><img src="https://img.shields.io/github/stars/EriikSilva/crud-primeng-node?style=social"></a>
-  <a href="https://github.com/EriikSilva/crud-primeng-node/network/members"><img src="https://img.shields.io/github/forks/EriikSilva/crud-primeng-node?style=social"></a>
+  <a href="https://github.com/EriikSilva/internet-banking-angular-node-mysq/graphs/commit-activity"><img src="https://img.shields.io/github/last-commit/EriikSilva/internet-banking-angular-node-mysql"></a>
+  <a href="https://github.com/EriikSilva/internet-banking-angular-node-mysql"><img src="https://img.shields.io/badge/status-InProgress-yellow"></a>
+  <a href="https://github.com/EriikSilva/internet-banking-angular-node-mysql/stargazers"><img src="https://img.shields.io/github/stars/EriikSilva/crud-primeng-node?style=social"></a>
+  <a href="https://github.com/EriikSilva/internet-banking-angular-node-mysql/network/members"><img src="https://img.shields.io/github/forks/EriikSilva/internet-banking-angular-node-mysql?style=social"></a>
   <a href="https://github.com/EriikSilva"><img src="https://img.shields.io/github/followers/EriikSilva?style=social"></a>
 </div>
 
