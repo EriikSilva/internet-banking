@@ -51,7 +51,8 @@ Projeto sobra um banco com features cadastro de conta, transferir para contas ex
   - Botão Visualizar transferências
 - Transferências
   - Visualizar transferências (feitas e recebidas)
-- Gráfico (em desenvolvimento) 
+  - Gerar um pdf do historico
+- Gráfico
   - Gráfico de pizza mostrando quantidade gasta e quantidade recebida
 # 💾 Instalação
 - Necessario Node e Angular
