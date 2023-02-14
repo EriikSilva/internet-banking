@@ -53,7 +53,7 @@ Projeto sobra um banco com features cadastro de conta, transferir para contas ex
   - Visualizar transferências (feitas e recebidas)
   - Gerar um pdf do historico
 - Gráfico
-  - Gráfico de pizza mostrando quantidade gasta e quantidade recebida
+  - Gráfico de barra mostrando quantidade gasta e quantidade recebida
 # 💾 Instalação
 - Necessario Node e Angular
 - Clonar o projeto ```git clone https://github.com/internet-banking-angular-node-mysql.git```
