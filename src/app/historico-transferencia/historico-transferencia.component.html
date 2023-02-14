@@ -34,7 +34,7 @@ class=" ml-5 mt-5 p-button-rounded p-button-danger"
     'margin-top': '3rem', 
     'margin-left': 'auto', 
     'margin-right': 'auto',
-    'margin-bottom': '60vh'
+    'margin-bottom': '75vh'
   }">
   <ng-template pTemplate="header">
     <tr>
@@ -47,7 +47,8 @@ class=" ml-5 mt-5 p-button-rounded p-button-danger"
   <ng-template pTemplate="body" let-transferencia>
     <tr>
       <td>{{ transferencia.criado_em | date : "short" : "UTC-4" : "pt-BR" }}</td>
-      <td [ngStyle]="{'color':transferencia.valor.toString().startsWith('-') ? '#f50505' : '#25f505' }"> {{transferencia.valor | currency:"BRL"}}</td>
+      <td [ngStyle]="{'color':transferencia.valor.toString().startsWith('-') ? '#f50505' : '#25f505' }"> 
+        {{transferencia.valor | currency:"BRL"}}</td>
       <td>{{ transferencia.nome | titlecase }}</td>
       <td>{{ transferencia.conta }}</td>
     </tr>
