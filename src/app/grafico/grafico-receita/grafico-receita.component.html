@@ -1,11 +1,20 @@
 <div class="bg"
-[style]="{'height': '100vh'}"
+[style]="
+{'height': '100vh'}"
 >
-<p-card [style]="{
+<p-card 
+    [style]="{
     'width': '60%',
     'margin-left': 'auto',
-    'margin-right': 'auto'}">
+    'margin-right': 'auto',
+    'padding-top': '5rem'
+
+    }">
     <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
 </p-card>
 
+
 </div>
+
+
+

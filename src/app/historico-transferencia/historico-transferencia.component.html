@@ -1,27 +1,25 @@
 
-<p-progressSpinner 
-*ngIf="isLoading"
-[style]="{
-  width: '300px', 
-  height: '300px',
-  'margin-left': '40%',
-  'margin-bottom': '50vh',
-  'margin-top': '5rem'
-  }" 
-styleClass="custom-spinner" 
-strokeWidth="8" 
-fill="var(--surface-ground)" 
-animationDuration=".5s"
-></p-progressSpinner>
 
 <div class="bg">
-
+  <p-progressSpinner 
+  *ngIf="isLoading"
+  [style]="{
+    width: '300px', 
+    height: '300px',
+    'margin-left': '40%',
+    'margin-bottom': '60vh',
+    'margin-top': '5rem'}"
+  styleClass="custom-spinner" 
+  strokeWidth="8" 
+  fill="var(--surface-ground)" 
+  animationDuration=".5s"
+  ></p-progressSpinner>
 <button 
+*ngIf="!isLoading"
 pButton 
 pRipple 
 type="button" 
 icon="pi pi-file-pdf"
-
 class=" ml-5 mt-5 p-button-rounded p-button-danger"
 (click)="printSimplePdf()"
 ></button>

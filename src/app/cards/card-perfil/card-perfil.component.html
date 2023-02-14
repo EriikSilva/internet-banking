@@ -41,6 +41,13 @@
         width="80%"
         ></p-skeleton>
         {{ this.email }}</h3>
+        <p-divider></p-divider>
+        <h3>Conta:
+          <p-skeleton 
+          *ngIf="isLoading" 
+          width="80%"
+          ></p-skeleton>
+          {{ this.numero_conta }}</h3>
     </ng-template>
 
     <p-divider></p-divider>

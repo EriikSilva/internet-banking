@@ -30,7 +30,7 @@ export class HistoricoTransferenciaComponent implements OnInit {
       this.transferencias = res.transferencias
       
     
-      console.log(this.transferencias)
+      // console.log(this.transferencias)
     })
 
   }
