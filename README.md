@@ -9,7 +9,7 @@
 </div>
 
 # 💬 Sobre
-Projeto sobre um banco ficition com features cadastro de conta, transferir para contas existentes e consultar saldo
+Projeto sobre um banco ficticio com features cadastro de conta, transferir para contas existentes e consultar saldo
 <br>
 - Front-end:angular com primeng.
 - Back-end:node com express e mysql.
