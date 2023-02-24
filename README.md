@@ -1,5 +1,4 @@
 # InternetBanking
-<h3>Ainda em desenvolvimento mas to quase acabando</h3>
 <div align="center">
   <a href="https://github.com/EriikSilva/internet-banking-angular-node-mysql"><img alt="hits" src="https://hits.sh/github.com/EriikSilva/internet-banking-angular-node-mysql.svg"></a>
   <a href="https://github.com/EriikSilva/internet-banking-angular-node-mysql/graphs/commit-activity"><img src="https://img.shields.io/github/last-commit/EriikSilva/internet-banking-angular-node-mysql"></a>
